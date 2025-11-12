@@ -945,7 +945,7 @@ section {
 /* Enhanced Chart Styles for Documentation */
 .chart-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -1191,6 +1191,8 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .results-header h2 {
@@ -1201,6 +1203,7 @@ section {
 .results-actions {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .results-content {
@@ -1529,7 +1532,42 @@ section {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .calculator-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .input-panel {
+        position: static;
+    }
+    
+    .docs-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .docs-toc {
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+    }
+    
     .nav-menu {
         display: none;
         position: absolute;
@@ -1562,42 +1600,259 @@ section {
         transform: rotate(45deg) translate(-5px, -6px);
     }
     
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
     .hero-container {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
     }
     
     .hero-title {
         font-size: 2.5rem;
     }
     
-    .calculator-layout {
-        grid-template-columns: 1fr;
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .calculator-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .calculator-subtitle {
+        font-size: 1.2rem;
     }
     
     .input-panel {
-        position: static;
+        padding: 1.5rem;
     }
     
-    .docs-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .docs-toc {
-        position: static;
-        margin-bottom: 2rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .footer-links {
-        grid-template-columns: 1fr;
+    .form-section {
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .area-input-group {
         grid-template-columns: 1fr;
     }
+    
+    .option-buttons {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .results-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .results-actions {
+        justify-content: center;
+    }
+    
+    .results-content {
+        padding: 1.5rem;
+    }
+    
+    .results-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .design-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .summary-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .summary-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .detail-value {
+        margin: 0;
+    }
+    
+    .docs-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .docs-sections {
+        padding: 1.5rem;
+    }
+    
+    .docs-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-card {
+        padding: 1.5rem;
+    }
+    
+    .equation-block {
+        padding: 1.5rem;
+    }
+    
+    .equation {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .calculator-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .input-panel {
+        padding: 1rem;
+    }
+    
+    .form-section h2 {
+        font-size: 1.1rem;
+    }
+    
+    .option-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .results-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .docs-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .docs-sections {
+        padding: 1rem;
+    }
+    
+    .docs-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .chart-wrapper {
+        height: 250px;
+    }
+    
+    .result-highlight {
+        padding: 1.5rem;
+    }
+    
+    .result-highlight .value {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+    
+    .nav-logo i {
+        font-size: 1.5rem;
+    }
+    
+    .lang-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .option-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .validation-table {
+        font-size: 0.85rem;
+    }
+    
+    .validation-table th,
+    .validation-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .footer,
+    .form-actions,
+    .results-actions {
+        display: none !important;
+    }
+    
+    .calculator-main {
+        padding: 0;
+    }
+    
+    .results-panel {
+        display: block !important;
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .chart-container {
+        page-break-inside: avoid;
+    }
+    }
