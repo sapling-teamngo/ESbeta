@@ -527,31 +527,41 @@ function initSliders() {
     }
 }
 
+// تحويل المساحة إلى متر مربع
+function convertAreaToSquareMeters(area, unit) {
+    const conversionFactors = {
+        'square-meter': 1,
+        'dunam': 1000,
+        'hectare': 10000,
+        'acre': 4046.86
+    };
+    
+    return area * conversionFactors[unit];
+}
+
 // حساب تصميم حصاد مياه الأمطار (UPDATED EQUATIONS BASED ON SOURCES)
-function calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue) {
+function calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue, areaValue, areaUnit) {
     // تحويل القيم إلى أرقام
     const climate = parseInt(climateValue);
     const purpose = parseInt(purposeValue);
     const slope = parseInt(slopeValue);
+    const area = parseFloat(areaValue) || 1; // Default to 1 if no area provided
+    
+    // تحويل المساحة إلى متر مربع
+    const areaInSquareMeters = convertAreaToSquareMeters(area, areaUnit);
     
     // E-1: حساب القطر بناءً على المنطقة المناخية (معدل الأمطار)
-    // بناءً على المصدر: https://www.greener.land/eyebrow-terraces-2/
-    // في المناطق الجافة (أمطار أقل) يكون القطر أكبر، وفي المناطق الرطبة (أمطار أكثر) يكون أصغر
     let D;
     
     if (climate <= 25) { // جافة جداً وشبه جافة (< 500 ملم)
-        // مناطق جافة: أحجام أكبر (8-12 متر)
         D = 8 + (purpose / 100) * 4;
     } else if (climate <= 75) { // جافة وشبه رطبة (500-1000 ملم)
-        // مناطق متوسطة: أحجام متوسطة (6-10 متر)
         D = 6 + (purpose / 100) * 4;
     } else { // رطبة (> 1000 ملم)
-        // مناطق رطبة: أحجام أصغر (4-8 متر)
         D = 4 + (purpose / 100) * 4;
     }
     
-    // تعديل القطر بناءً على الغرض (بناءً على المصدر)
-    // للرعي: أحجام أكبر، لتحسين التربة: أحجام أصغر
+    // تعديل القطر بناءً على الغرض
     if (purpose <= 25) { // الرعي - أحجام أكبر
         D += 1;
     } else if (purpose >= 75) { // تحسين التربة - أحجام أصغر
@@ -580,21 +590,16 @@ function calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue) {
     // E-6: حساب نسبة التجميع إلى الزراعة (C:A) - بناءً على المصدر
     let baseC_A;
     
-    // حساب يعتمد على المنطقة المناخية (معدل الأمطار)
     if (climate <= 25) { // جافة جداً وشبه جافة (< 500 ملم)
-        baseC_A = 3.0 + (purpose / 100) * 1.0; // نسب أعلى في المناطق الجافة
+        baseC_A = 3.0 + (purpose / 100) * 1.0;
     } else if (climate <= 75) { // جافة وشبه رطبة (500-1000 ملم)
-        baseC_A = 2.2 + (purpose / 100) * 0.8; // نسب متوسطة
+        baseC_A = 2.2 + (purpose / 100) * 0.8;
     } else { // رطبة (> 1000 ملم)
-        baseC_A = 1.6 + (purpose / 100) * 0.6; // نسب أقل في المناطق الرطبة
+        baseC_A = 1.6 + (purpose / 100) * 0.6;
     }
     
-    // تأثير الميل (زيادة 2% لكل 1% ميل حسب المصدر)
     let slopeEffect = 1 + (slope * 0.02);
-    
     let C_A = baseC_A * slopeEffect;
-    
-    // ضمان الحدود المعقولة (1.0-4.0 حسب المصدر)
     C_A = Math.max(1.0, Math.min(4.0, C_A));
     
     // E-7: حساب مساحة منطقة التجميع
@@ -603,8 +608,8 @@ function calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue) {
     // E-10: حساب عدد الحفر في الهكتار
     const N_total_per_hectare = 10000 / (L * Y);
     
-    // حساب إجمالي عدد الحفر للمساحة المحددة (افتراضي 1 هكتار)
-    const total_pits = Math.round(N_total_per_hectare);
+    // حساب إجمالي عدد الحفر للمساحة المحددة
+    const total_pits = Math.round((areaInSquareMeters / 10000) * N_total_per_hectare);
     
     return {
         diameter: D,
@@ -616,7 +621,8 @@ function calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue) {
         catchArea: A_catch,
         caRatio: C_A,
         pitsPerHectare: Math.round(N_total_per_hectare),
-        totalPits: total_pits
+        totalPits: total_pits,
+        totalArea: areaInSquareMeters
     };
 }
 
@@ -816,9 +822,11 @@ function initCalculator() {
             const climateValue = document.getElementById('climate-zone').value;
             const purposeValue = document.getElementById('purpose').value;
             const slopeValue = document.getElementById('slope').value;
+            const areaValue = document.getElementById('land-area').value || 1;
+            const areaUnit = document.getElementById('area-unit').value;
             
             // حساب النتائج
-            const results = calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue);
+            const results = calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue, areaValue, areaUnit);
             
             // عرض النتائج
             displayResults(results);
@@ -835,6 +843,14 @@ function initCalculator() {
         if (printBtn) {
             printBtn.addEventListener('click', function() {
                 window.print();
+            });
+        }
+        
+        // زر إعادة تعيين
+        const resetBtn = calculatorForm.querySelector('button[type="reset"]');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                document.getElementById('results-panel').style.display = 'none';
             });
         }
     }
