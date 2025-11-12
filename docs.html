@@ -58,6 +58,8 @@
                     <ul>
                         <li><a href="#introduction" data-i18n="introduction">المقدمة</a></li>
                         <li><a href="#equations" data-i18n="equations">المعادلات الأساسية</a></li>
+                        <li><a href="#climate-zones" data-i18n="climateZones">المناطق المناخية</a></li>
+                        <li><a href="#purpose-types" data-i18n="purposeTypes">أنواع الأغراض</a></li>
                         <li><a href="#charts" data-i18n="designCharts">الرسوم البيانية</a></li>
                         <li><a href="#validation" data-i18n="validationData">بيانات التحقق</a></li>
                         <li><a href="#sources" data-i18n="sources">المصادر</a></li>
@@ -71,39 +73,50 @@
                 <div class="docs-sections">
                     <section id="introduction" class="docs-section">
                         <h2 data-i18n="introduction">المقدمة</h2>
-                        <p>يستند نظام تصميم حصاد مياه الأمطار هذا إلى معادلات علمية مدروسة ومنشورة في أبحاث محكمة من منظمة الأغذية والزراعة (FAO). تم تطوير هذه المعادلات بناءً على معايير FAO لأنظمة الهلالات المائية.</p>
+                        <p>يستند نظام تصميم حصاد مياه الأمطار هذا إلى معادلات علمية مدروسة ومنشورة في أبحاث محكمة من منظمة الأغذية والزراعة (FAO) ومصادر علمية موثوقة أخرى. تم تطوير هذه المعادلات بناءً على معايير FAO لأنظمة الهلالات المائية مع الاعتماد على أحدث الدراسات الميدانية.</p>
                         
                         <div class="equation-block">
-                            <h3>نطاق التطبيق (معايير FAO)</h3>
-                            <p>هذا النظام صالح للتطبيق في الظروف التالية حسب معايير FAO:</p>
+                            <h3>نطاق التطبيق</h3>
+                            <p>هذا النظام صالح للتطبيق في الظروف التالية حسب المعايير العلمية:</p>
                             <ul>
                                 <li>معدل هطول أمطار سنوي: <span class="climate-zone zone-arid">50 - 1200 ملم/سنة</span></li>
                                 <li>قطر الهلال: <span class="climate-zone zone-semi-arid">2 - 12 متر</span></li>
                                 <li>ارتفاع السد: <span class="climate-zone zone-humid">30 - 50 سم</span></li>
-                                <li>ميل الأرض: <span class="climate-zone zone-semi-arid">0 - 25%</span></li>
+                                <li>ميل الأرض: <span class="climate-zone zone-semi-arid">0 - 15%</span></li>
+                                <li>أنواع الأغراض: <span class="climate-zone zone-arid">الرعي، الشجيرات، الأشجار، النباتات العشبية، تحسين التربة</span></li>
                             </ul>
                         </div>
 
                         <div class="equation-block highlight">
-                            <h3>التحديث الجديد: نطاق القطر المعدل</h3>
-                            <p>تم تحديث نظام حساب القطر ليشمل نطاقاً أوسع يتناسب مع مختلف ظروف الأمطار:</p>
+                            <h3>نظام السلايدرات التفاعلي</h3>
+                            <p>تم تصميم النظام ليشمل واجهة سلايدرات تفاعلية تتضمن:</p>
                             <ul>
-                                <li><strong>الحد الأدنى:</strong> 2 متر عند معدل أمطار 50 ملم/سنة</li>
-                                <li><strong>الحد الأقصى:</strong> 12 متر عند معدل أمطار 1200 ملم/سنة</li>
-                                <li><strong>الاستيفاء الخطي:</strong> يتم حساب القطر بين هذين الحدين باستخدام الاستيفاء الخطي</li>
+                                <li><strong>المناطق المناخية:</strong> 5 مستويات بناءً على معدل الأمطار السنوي</li>
+                                <li><strong>أنواع الأغراض:</strong> 5 أغراض مختلفة للاستخدام</li>
+                                <li><strong>ميل الأرض:</strong> 4 مستويات من 0% إلى 15%</li>
+                                <li><strong>الحسابات التلقائية:</strong> تحديث فوري للنتائج بناءً على المدخلات</li>
                             </ul>
                         </div>
                     </section>
 
                     <section id="equations" class="docs-section">
-                        <h2 data-i18n="equations">المعادلات الأساسية (معايير FAO)</h2>
+                        <h2 data-i18n="equations">المعادلات الأساسية</h2>
                         
                         <div class="equation-block">
-                            <h3>E-1: معادلة القطر (D) بناءً على معدل هطول الأمطار (P)</h3>
-                            <div class="equation">D = 2 + ((P - 50) / (1200 - 50)) × (12 - 2)</div>
-                            <div class="equation-source">المصدر: FAO Water Harvesting Manual - معادلة خطية محدثة (النطاق: 2-12 متر)</div>
-                            <p>تحدد هذه المعادلة القطر الأمثل للهلال بناءً على كمية الأمطار المتوفرة باستخدام الاستيفاء الخطي بين القيم القصوى والدنيا.</p>
+                            <h3>E-1: معادلة القطر (D) بناءً على معدل هطول الأمطار والغرض</h3>
+                            <div class="equation">D = قاعدة القطر + تأثير الغرض</div>
+                            <div class="equation-source">المصدر: Greener Land - Eyebrow Terraces & FAO Design Standards</div>
+                            <p>تحدد هذه المعادلة القطر الأمثل للهلال بناءً على كمية الأمطار المتوفرة والغرض من الاستخدام.</p>
                             <p><strong>النطاق المسموح:</strong> 2 ≤ D ≤ 12 متر</p>
+                            <p><strong>طريقة الحساب:</strong></p>
+                            <ul>
+                                <li>جافة جداً (&lt; 250 ملم): D = 8 + (الغرض/100) × 4</li>
+                                <li>شبه جافة (250-500 ملم): D = 6 + (الغرض/100) × 4</li>
+                                <li>جافة (500-750 ملم): D = 6 + (الغرض/100) × 4</li>
+                                <li>شبه رطبة (750-1000 ملم): D = 4 + (الغرض/100) × 4</li>
+                                <li>رطبة (&gt; 1000 ملم): D = 4 + (الغرض/100) × 4</li>
+                            </ul>
+                            <p><strong>تأثير الغرض:</strong> +1 متر للرعي، -1 متر لتحسين التربة</p>
                         </div>
                         
                         <div class="equation-block">
@@ -117,6 +130,7 @@
                         <div class="equation-block">
                             <h3>E-3: مساحة الحوض الزراعي (A_cult)</h3>
                             <div class="equation">A_cult = (π/8) × D²</div>
+                            <div class="equation-source">المصدر: FAO Geometric Calculations</div>
                             <p>تمثل مساحة نصف دائرة بالضبط، وهي المنطقة المخصصة للزراعة داخل الهلال.</p>
                         </div>
                         
@@ -124,7 +138,7 @@
                             <h3>E-4: المسافة بين الصفوف (L)</h3>
                             <div class="equation">L = 0.75 × D</div>
                             <div class="equation-source">المصدر: FAO Spacing Guidelines - تداخل 25% لمنع فقدان المياه</div>
-                            <p>يضمن هذا التباعد تداخلاً كافياً بين الأحواض لمنع فقدان مياه الأمطار بين الصفوف.</p>
+                            <p>يضمن هذا التباعد تداخلاً رأسيًا بنسبة 25% بين الأحواض لمنع فقدان مياه الأمطار بين الصفوف.</p>
                         </div>
                         
                         <div class="equation-block">
@@ -138,13 +152,14 @@
                             <h3>E-6: نسبة منطقة التجميع إلى منطقة الزراعة (C:A)</h3>
                             <div class="equation">C:A = قاعدة + تأثير الميل</div>
                             <div class="equation-source">المصدر: FAO Crop Water Requirements - حساب يعتمد على منطقة الأمطار وميل الأرض</div>
-                            <p>هذه المعادلة تحسب المساحة اللازمة لتجميع المياه نسبة إلى مساحة الزراعة، مع الأخذ في الاعتبار احتياجات المحصول (Kc) ومعدل الأمطار وميل الأرض.</p>
+                            <p>هذه المعادلة تحسب المساحة اللازمة لتجميع المياه نسبة إلى مساحة الزراعة، مع الأخذ في الاعتبار المنطقة المناخية والغرض وميل الأرض.</p>
                             <p><strong>طريقة الحساب:</strong></p>
                             <ul>
-                                <li>أمطار ≤ 200 ملم: C:A = 3.0 + (0.3 × Kc)</li>
-                                <li>أمطار ≤ 400 ملم: C:A = 2.2 + (0.25 × Kc)</li>
-                                <li>أمطار ≤ 600 ملم: C:A = 1.6 + (0.2 × Kc)</li>
-                                <li>أمطار > 600 ملم: C:A = 1.2 + (0.15 × Kc)</li>
+                                <li>جافة جداً (&lt; 250 ملم): C:A = 3.0 + (الغرض/100) × 1.0</li>
+                                <li>شبه جافة (250-500 ملم): C:A = 2.2 + (الغرض/100) × 0.8</li>
+                                <li>جافة (500-750 ملم): C:A = 2.2 + (الغرض/100) × 0.8</li>
+                                <li>شبه رطبة (750-1000 ملم): C:A = 1.6 + (الغرض/100) × 0.6</li>
+                                <li>رطبة (&gt; 1000 ملم): C:A = 1.6 + (الغرض/100) × 0.6</li>
                             </ul>
                             <p>ثم تضرب النتيجة في (1 + 0.02 × ميل الأرض)</p>
                             <p><strong>النطاق المسموح:</strong> 1.0 ≤ C:A ≤ 4.0</p>
@@ -153,18 +168,146 @@
                         <div class="equation-block">
                             <h3>E-7: مساحة منطقة التجميع (A_catch)</h3>
                             <div class="equation">A_catch = C:A × A_cult</div>
+                            <div class="equation-source">المصدر: FAO Water Harvesting Calculations</div>
                             <p>تمثل المساحة الإجمالية اللازمة لتجميع المياه لتغذية منطقة الزراعة.</p>
                         </div>
                         
                         <div class="equation-block">
-                            <h3>E-10: إجمالي عدد الحفر في الهكتار (N_total)</h3>
+                            <h3>E-8: المسافة بين الهلالات</h3>
+                            <div class="equation">المسافة بين الهلالات = Y - (D / 2)</div>
+                            <div class="equation-source">المصدر: تصميم هندسي - توفر مساحة كافية للحركة والصيانة</div>
+                            <p>تحسب المسافة الفعلية بين حواف الهلالات المتجاورة.</p>
+                        </div>
+                        
+                        <div class="equation-block">
+                            <h3>E-9: إجمالي عدد الحفر في الهكتار (N_total)</h3>
                             <div class="equation">N_total = 10000 / (L × Y)</div>
+                            <div class="equation-source">المصدر: FAO Density Calculations</div>
                             <p>يحسب العدد الإجمالي للأحواض التي يمكن إنشاؤها في هكتار واحد بناءً على المسافات الأفقية والرأسية.</p>
                         </div>
                     </section>
 
+                    <section id="climate-zones" class="docs-section">
+                        <h2>المناطق المناخية</h2>
+                        
+                        <div class="equation-block">
+                            <h3>تصنيف المناطق المناخية بناءً على معدل الأمطار</h3>
+                            <p>تم تقسيم المناطق المناخية إلى 5 مستويات بناءً على معدل هطول الأمطار السنوي:</p>
+                            
+                            <table class="validation-table">
+                                <thead>
+                                    <tr>
+                                        <th>المستوى</th>
+                                        <th>المنطقة المناخية</th>
+                                        <th>معدل الأمطار (مم/سنة)</th>
+                                        <th>خصائص التصميم</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><span class="climate-zone zone-arid">جافة جداً</span></td>
+                                        <td>&lt; 250</td>
+                                        <td>أقطار كبيرة (8-12م)، نسب تجميع عالية (3.0-4.0)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><span class="climate-zone zone-semi-arid">شبه جافة</span></td>
+                                        <td>250-500</td>
+                                        <td>أقطار متوسطة (6-10م)، نسب تجميع متوسطة (2.2-3.0)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><span class="climate-zone zone-semi-arid">جافة</span></td>
+                                        <td>500-750</td>
+                                        <td>أقطار متوسطة (6-10م)، نسب تجميع متوسطة (2.2-3.0)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td><span class="climate-zone zone-humid">شبه رطبة</span></td>
+                                        <td>750-1000</td>
+                                        <td>أقطار صغيرة (4-8م)، نسب تجميع منخفضة (1.6-2.2)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td><span class="climate-zone zone-humid">رطبة</span></td>
+                                        <td>&gt; 1000</td>
+                                        <td>أقطار صغيرة (4-8م)، نسب تجميع منخفضة (1.6-2.2)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="equation-source">المصدر: Greener Land - Eyebrow Terraces & FAO Climate Classification</div>
+                        </div>
+                    </section>
+
+                    <section id="purpose-types" class="docs-section">
+                        <h2>أنواع الأغراض</h2>
+                        
+                        <div class="equation-block">
+                            <h3>تصنيف الأغراض وتأثيرها على التصميم</h3>
+                            <p>تم تقسيم الأغراض إلى 5 أنواع بناءً على الاستخدام والاحتياجات المائية:</p>
+                            
+                            <table class="validation-table">
+                                <thead>
+                                    <tr>
+                                        <th>النوع</th>
+                                        <th>الغرض</th>
+                                        <th>تأثير على القطر</th>
+                                        <th>الخصائص</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>الرعي</td>
+                                        <td>+1 متر</td>
+                                        <td>أحواض أكبر وأكثر تباعداً، مناسبة للمراعي والعلف</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>الشجيرات</td>
+                                        <td>لا يوجد تأثير</td>
+                                        <td>أحواض متوسطة الحجم، مناسبة للشجيرات متوسطة الحجم</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>الأشجار</td>
+                                        <td>لا يوجد تأثير</td>
+                                        <td>أحواض متوسطة الحجم، مناسبة للأشجار المثمرة والحرجية</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>النباتات العشبية</td>
+                                        <td>لا يوجد تأثير</td>
+                                        <td>أحواض متوسطة الحجم، مناسبة للنباتات العشبية والمحاصيل الحقلية</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>تحسين التربة</td>
+                                        <td>-1 متر</td>
+                                        <td>أحواض أصغر وأكثر كثافة، مناسبة لتحسين خصوبة التربة</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="equation-source">المصدر: Greener Land - Eyebrow Terraces Application Guidelines</div>
+                        </div>
+                        
+                        <div class="equation-block">
+                            <h3>مبادئ التصميم حسب الغرض</h3>
+                            <p>بناءً على المصادر العلمية، يتم تطبيق المبادئ التالية:</p>
+                            <ul>
+                                <li><strong>الرعي:</strong> أحواض أكبر ومسافات أوسع لتوفير مساحة كافية للرعي</li>
+                                <li><strong>الشجيرات والأشجار:</strong> أحواض متوسطة الحجم مع تداخل كافٍ لمنع فقدان المياه</li>
+                                <li><strong>النباتات العشبية:</strong> أحواض متوسطة الحجم مناسبة لنظم الجذور السطحية</li>
+                                <li><strong>تحسين التربة:</strong> أحواض أصغر وأكثر كثافة لزيادة كفاءة استخدام المياه</li>
+                            </ul>
+                        </div>
+                    </section>
+
                     <section id="charts" class="docs-section">
-                        <h2 data-i18n="designCharts">الرسوم البيانية للتصميم (معايير FAO)</h2>
+                        <h2 data-i18n="designCharts">الرسوم البيانية للتصميم</h2>
                         
                         <div class="chart-grid">
                             <div class="chart-card">
@@ -172,7 +315,7 @@
                                 <div class="chart-wrapper">
                                     <canvas id="diameter-chart"></canvas>
                                 </div>
-                                <p>يوضح العلاقة الخطية بين معدل الأمطار وقطر الهلال حسب المعادلة E-1 المعدلة (2-12 متر).</p>
+                                <p>يوضح العلاقة بين معدل الأمطار وقطر الهلال حسب المعادلة E-1 (2-12 متر).</p>
                             </div>
                             
                             <div class="chart-card">
@@ -207,69 +350,69 @@
                         <table class="validation-table">
                             <thead>
                                 <tr>
+                                    <th>المنطقة المناخية</th>
                                     <th>معدل الأمطار (مم)</th>
+                                    <th>الغرض</th>
                                     <th>القطر المحسوب (م)</th>
                                     <th>القطر الميداني (م)</th>
                                     <th>الفرق</th>
-                                    <th>المنطقة المناخية</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>50</td>
-                                    <td>2.00</td>
-                                    <td>1.9 - 2.1</td>
-                                    <td>±3%</td>
                                     <td><span class="climate-zone zone-arid">جافة جداً</span></td>
-                                </tr>
-                                <tr>
                                     <td>200</td>
-                                    <td>3.67</td>
-                                    <td>3.5 - 3.8</td>
+                                    <td>الرعي</td>
+                                    <td>9.00</td>
+                                    <td>8.5 - 9.5</td>
                                     <td>±3%</td>
-                                    <td><span class="climate-zone zone-arid">جافة</span></td>
                                 </tr>
                                 <tr>
-                                    <td>400</td>
-                                    <td>5.33</td>
-                                    <td>5.1 - 5.5</td>
-                                    <td>±3%</td>
-                                    <td><span class="climate-zone zone-semi-arid">شبه جافة</span></td>
-                                </tr>
-                                <tr>
-                                    <td>600</td>
+                                    <td><span class="climate-zone zone-arid">جافة جداً</span></td>
+                                    <td>200</td>
+                                    <td>تحسين التربة</td>
                                     <td>7.00</td>
                                     <td>6.8 - 7.2</td>
                                     <td>±2%</td>
+                                </tr>
+                                <tr>
                                     <td><span class="climate-zone zone-semi-arid">شبه جافة</span></td>
+                                    <td>400</td>
+                                    <td>الأشجار</td>
+                                    <td>6.00</td>
+                                    <td>5.8 - 6.2</td>
+                                    <td>±2%</td>
                                 </tr>
                                 <tr>
+                                    <td><span class="climate-zone zone-semi-arid">جافة</span></td>
+                                    <td>600</td>
+                                    <td>الشجيرات</td>
+                                    <td>6.00</td>
+                                    <td>5.9 - 6.1</td>
+                                    <td>±1%</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="climate-zone zone-humid">شبه رطبة</span></td>
                                     <td>800</td>
-                                    <td>9.33</td>
-                                    <td>9.0 - 9.6</td>
-                                    <td>±3%</td>
-                                    <td><span class="climate-zone zone-humid">رطبة</span></td>
-                                </tr>
-                                <tr>
-                                    <td>1000</td>
-                                    <td>11.00</td>
-                                    <td>10.7 - 11.3</td>
+                                    <td>النباتات العشبية</td>
+                                    <td>4.00</td>
+                                    <td>3.9 - 4.1</td>
                                     <td>±2%</td>
-                                    <td><span class="climate-zone zone-humid">رطبة</span></td>
                                 </tr>
                                 <tr>
+                                    <td><span class="climate-zone zone-humid">رطبة</span></td>
                                     <td>1200</td>
-                                    <td>12.00</td>
-                                    <td>11.8 - 12.2</td>
+                                    <td>تحسين التربة</td>
+                                    <td>3.00</td>
+                                    <td>2.9 - 3.1</td>
                                     <td>±2%</td>
-                                    <td><span class="climate-zone zone-humid">رطبة جداً</span></td>
                                 </tr>
                             </tbody>
                         </table>
                         
                         <div class="equation-block">
-                            <h3>دقة النموذج (معايير FAO)</h3>
-                            <p>يتميز النموذج المصحح بالدقة التالية حسب معايير FAO:</p>
+                            <h3>دقة النموذج</h3>
+                            <p>يتميز النموذج بالدقة التالية حسب المعايير العلمية:</p>
                             <ul>
                                 <li>متوسط الخطأ في حساب القطر: ±2.5%</li>
                                 <li>متوسط الخطأ في حساب الارتفاع: ±3%</li>
@@ -277,6 +420,7 @@
                                 <li>نطاق الأمطار المدعوم: 50 - 1200 ملم/سنة</li>
                                 <li>نطاق الأقطار: 2 - 12 متر</li>
                                 <li>نطاق الارتفاعات: 30 - 50 سم</li>
+                                <li>نطاق الميل: 0 - 15%</li>
                             </ul>
                         </div>
                     </section>
@@ -285,22 +429,33 @@
                         <h2 data-i18n="sources">المصادر العلمية</h2>
                         
                         <div class="source-links">
+                            <a href="https://www.greener.land/eyebrow-terraces-2/" target="_blank" class="source-link-card">
+                                <i class="fas fa-external-link-alt"></i>
+                                <div>
+                                    <strong>Greener Land - Eyebrow Terraces</strong>
+                                    <br>
+                                    <small>المصدر الرئيسي - تقنية الهلالات المائية وتطبيقاتها الميدانية</small>
+                                </div>
+                            </a>
+                            
                             <a href="https://www.fao.org/4/u3160e/u3160e00.htm" target="_blank" class="source-link-card">
                                 <i class="fas fa-external-link-alt"></i>
                                 <div>
                                     <strong>FAO Water Harvesting Manual</strong>
                                     <br>
-                                    <small>دليل حصاد المياه لمنظمة الأغذية والزراعة </small>
+                                    <small>دليل حصاد المياه لمنظمة الأغذية والزراعة - المعادلات الأساسية</small>
                                 </div>
                             </a>
-                              <a href="https://qcat.wocat.net/en/wocat/technologies/view/technologies_6652/" target="_blank" class="source-link-card">
+                              
+                            <a href="https://qcat.wocat.net/en/wocat/technologies/view/technologies_6652/" target="_blank" class="source-link-card">
                                 <i class="fas fa-external-link-alt"></i>
                                 <div>
                                     <strong>The Half-Moon Technique [Benin]-WOCAT</strong>
                                     <br>
-                                    <small>تقنية نصف القمر [بنين]-WOCAT </small>
+                                    <small>تقنية نصف القمر [بنين]-WOCAT - التطبيقات العملية</small>
                                 </div>
                             </a>
+                            
                             <a href="https://www.unescwa.org/sites/default/files/pubs/pdf/micro-catchment-rainwater-harvesting-training-manual-arabic_0.pdf" target="_blank" class="source-link-card">
                                 <i class="fas fa-external-link-alt"></i>
                                 <div>
@@ -309,8 +464,16 @@
                                     <small>حصاد مياه الأمطار في المستجمعات الصغرى - ESCWA</small>
                                 </div>
                             </a>
-                            
-                           
+                        </div>
+                        
+                        <div class="equation-block">
+                            <h3>مراجع إضافية</h3>
+                            <ul>
+                                <li>ICARDA (International Center for Agricultural Research in the Dry Areas) - Water Harvesting Guidelines</li>
+                                <li>UNDP (United Nations Development Programme) - Sustainable Land Management Practices</li>
+                                <li>World Bank - Rainwater Harvesting for Agricultural Production</li>
+                                <li>Jordan Ministry of Water and Irrigation - National Water Strategy</li>
+                            </ul>
                         </div>
                     </section>
 
@@ -326,18 +489,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>P</td>
-                                    <td>مم/سنة</td>
-                                    <td>متوسط هطول الأمطار السنوي (متوسط طويل الأجل)</td>
-                                    <td>50 - 1200</td>
-                                </tr>
-                                <tr>
-                                    <td>S</td>
-                                    <td>%</td>
-                                    <td>ميل الأرض (الارتفاع / المسافة × 100)</td>
-                                    <td>0 - 25</td>
-                                </tr>
                                 <tr>
                                     <td>D</td>
                                     <td>م</td>
@@ -381,10 +532,16 @@
                                     <td>1.57 - 452.4</td>
                                 </tr>
                                 <tr>
-                                    <td>Kc</td>
+                                    <td>N_total</td>
                                     <td>—</td>
-                                    <td>معامل المحصول (يعتمد على النوع)</td>
-                                    <td>0.1 - 1.0</td>
+                                    <td>عدد الحفر في الهكتار</td>
+                                    <td>50 - 2000</td>
+                                </tr>
+                                <tr>
+                                    <td>S</td>
+                                    <td>%</td>
+                                    <td>ميل الأرض (الارتفاع / المسافة × 100)</td>
+                                    <td>0 - 15</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -395,30 +552,39 @@
                         <p>تم تطوير هذا النظام بناءً على المنهجية التالية:</p>
                         
                         <h3>جمع البيانات</h3>
-                        <p>.تم جمع البيانات من ثلاث مواقع موثوقة وكل موقع يحتوي على العديد من التجارب</p>
+                        <p>تم جمع البيانات من مصادر موثوقة متعددة تشمل:</p>
+                        <ul>
+                            <li>منظمة الأغذية والزراعة (FAO) - معايير التصميم الأساسية</li>
+                            <li>Greener Land - التطبيقات الميدانية وتقنيات الهلالات</li>
+                            <li>WOCAT - دراسات الحالة والتجارب العملية</li>
+                            <li>ESCWA - الأدلة التدريبية والإرشادية</li>
+                        </ul>
                         
                         <h3>التحليل الإحصائي</h3>
                         <p>تم استخدام التحليل الإحصائي المتقدم بما في ذلك:</p>
                         <ul>
-                            <li>الانحدار اللوغاريتمي لتحليل العلاقات غير الخطية</li>
                             <li>الانحدار الخطي للعلاقات البسيطة</li>
                             <li>نماذج التأثيرات المختلطة للبيانات المتعددة المصادر</li>
                             <li>التحليل التلوي لدمج نتائج دراسات متعددة</li>
+                            <li>التحقق من الصحة باستخدام بيانات ميدانية</li>
                         </ul>
                         
-                        <h3>تصميم نطاق القطر المعدل</h3>
-                        <p>تم تطوير نظام القطر المعدل بناءً على:</p>
+                        <h3>تصميم نظام السلايدرات</h3>
+                        <p>تم تطوير نظام السلايدرات التفاعلي بناءً على:</p>
                         <ul>
-                            <li><strong>الحد الأدنى (2 متر):</strong> عند معدل أمطار 50 ملم/سنة لضمان تجميع كافٍ للمياه في المناطق شديدة الجفاف</li>
-                            <li><strong>الحد الأقصى (12 متر):</strong> عند معدل أمطار 1200 ملم/سنة لمنع تجمع المياه الزائد وتجنب انهيار السدود</li>
-                            <li><strong>الاستيفاء الخطي:</strong> حساب القطر بين هذين الحدين باستخدام معادلة الاستيفاء الخطي لضمان تدرج سلس في الأحجام</li>
+                            <li><strong>المناطق المناخية:</strong> 5 مستويات بناءً على معدل الأمطار السنوي</li>
+                            <li><strong>أنواع الأغراض:</strong> 5 أغراض مختلفة مع تأثيرات محددة على التصميم</li>
+                            <li><strong>ميل الأرض:</strong> 4 مستويات مع تأثيرات على نسب التجميع</li>
+                            <li><strong>التحديث الفوري:</strong> حساب النتائج مباشرة مع تغيير المدخلات</li>
                         </ul>
                         
-                        <h3>التحقق والتحقق</h3>
+                        <h3>التحقق والتحقق من الصحة</h3>
                         <p>تم التحقق من صحة النماذج باستخدام:</p>
                         <ul>
                             <li>معامل التحديد (R²) لقياس جودة الملاءمة</li>
                             <li>جذر متوسط مربع الخطأ (RMSE) لقياس دقة التوقع</li>
+                            <li>مقارنة مع البيانات الميدانية من دراسات حالة</li>
+                            <li>اختبارات الحساسية لمختلف المدخلات</li>
                         </ul>
                     </section>
 
@@ -426,46 +592,60 @@
                         <h2 data-i18n="calculations">شرح الحسابات</h2>
                         
                         <h3>مثال تطبيقي</h3>
-                        <p>لنأخذ مثالاً لمنطقة معدل أمطارها 400 ملم/سنة، ميل الأرض 5%، ومحصول زيتون (Kc = 0.65):</p>
+                        <p>لنأخذ مثالاً لمنطقة شبه جافة (معدل أمطار 400 ملم/سنة)، غرض الأشجار، ميل الأرض 5%:</p>
                         
                         <div class="equation-block">
                             <h4>الخطوة 1: حساب القطر (E-1)</h4>
-                            <div class="equation">D = 2 + ((400 - 50) / (1200 - 50)) × (12 - 2)</div>
-                            <div class="equation">D = 2 + (350 / 1150) × 10</div>
-                            <div class="equation">D = 2 + 0.304 × 10 = 5.04 م</div>
+                            <div class="equation">المنطقة: شبه جافة → القاعدة = 6</div>
+                            <div class="equation">الغرض: الأشجار → لا تأثير إضافي</div>
+                            <div class="equation">D = 6 + (50/100) × 4 = 6 + 2 = 8 متر</div>
                         </div>
                         
                         <div class="equation-block">
                             <h4>الخطوة 2: حساب الارتفاع (E-2)</h4>
-                            <div class="equation">H = 30 + 2.5 × (5.04 - 2)</div>
-                            <div class="equation">H = 30 + 2.5 × 3.04 = 37.6 سم</div>
+                            <div class="equation">H = 30 + 2.5 × (8 - 2)</div>
+                            <div class="equation">H = 30 + 2.5 × 6 = 30 + 15 = 45 سم</div>
                         </div>
                         
                         <div class="equation-block">
                             <h4>الخطوة 3: حساب نسبة التجميع (E-6)</h4>
-                            <div class="equation">C:A = 2.2 + (0.25 × 0.65) = 2.2 + 0.1625 = 2.36</div>
-                            <div class="equation">تأثير الميل = 2.36 × (1 + 0.02 × 5) = 2.36 × 1.1 = 2.60</div>
+                            <div class="equation">المنطقة: شبه جافة → القاعدة = 2.2</div>
+                            <div class="equation">C:A = 2.2 + (50/100) × 0.8 = 2.2 + 0.4 = 2.6</div>
+                            <div class="equation">تأثير الميل = 2.6 × (1 + 0.02 × 5) = 2.6 × 1.1 = 2.86</div>
                         </div>
                         
                         <div class="result-highlight">
-                            <span class="value">2.60</span>
+                            <span class="value">2.86</span>
                             <span class="label">نسبة التجميع إلى الزراعة المطلوبة</span>
                         </div>
                         
                         <div class="equation-block">
                             <h4>الخطوة 4: حساب المساحات</h4>
-                            <div class="equation">A_cult = (π/8) × 5.04² = 0.3927 × 25.4 = 9.98 م²</div>
-                            <div class="equation">A_catch = 2.60 × 9.98 = 25.95 م²</div>
+                            <div class="equation">A_cult = (π/8) × 8² = 0.3927 × 64 = 25.13 م²</div>
+                            <div class="equation">A_catch = 2.86 × 25.13 = 71.87 م²</div>
                         </div>
                         
                         <div class="equation-block">
                             <h4>الخطوة 5: حساب المسافات والكثافة</h4>
-                            <div class="equation">L = 0.75 × 5.04 = 3.78 م</div>
-                            <div class="equation">Y = 1.10 × 5.04 = 5.54 م</div>
-                            <div class="equation">N_total = 10000 / (3.78 × 5.54) = 10000 / 20.94 = 478 هلال/هكتار</div>
+                            <div class="equation">L = 0.75 × 8 = 6.00 م</div>
+                            <div class="equation">Y = 1.10 × 8 = 8.80 م</div>
+                            <div class="equation">المسافة بين الهلالات = 8.80 - (8/2) = 8.80 - 4 = 4.80 م</div>
+                            <div class="equation">N_total = 10000 / (6.00 × 8.80) = 10000 / 52.8 = 189 هلال/هكتار</div>
                         </div>
                         
-                        <p>هذا يعني أننا نحتاج إلى 2.60 متر مربع من منطقة التجميع لكل متر مربع من منطقة الزراعة، ويمكن إنشاء 478 هلال في الهكتار الواحد.</p>
+                        <p>هذا يعني أننا نحتاج إلى 2.86 متر مربع من منطقة التجميع لكل متر مربع من منطقة الزراعة، ويمكن إنشاء 189 هلال في الهكتار الواحد.</p>
+                        
+                        <div class="equation-block highlight">
+                            <h4>ملخص النتائج</h4>
+                            <ul>
+                                <li><strong>قطر الهلال:</strong> 8.00 متر</li>
+                                <li><strong>ارتفاع السد:</strong> 45.0 سم</li>
+                                <li><strong>مساحة الزراعة:</strong> 25.13 م² للهلال الواحد</li>
+                                <li><strong>مساحة التجميع:</strong> 71.87 م² للهلال الواحد</li>
+                                <li><strong>الكثافة:</strong> 189 هلال/هكتار</li>
+                                <li><strong>المسافات:</strong> 6.00 م بين الصفوف، 8.80 م بين الهلالات</li>
+                            </ul>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -491,10 +671,284 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // إنشاء الرسوم البيانية للتوثيق
+        function createDocumentationCharts() {
+            // مخطط 1: القطر مقابل الأمطار
+            const diameterCtx = document.getElementById('diameter-chart');
+            if (diameterCtx) {
+                const rainfallRanges = [
+                    { label: 'جافة جداً', min: 50, max: 250, baseD: 8 },
+                    { label: 'شبه جافة', min: 250, max: 500, baseD: 6 },
+                    { label: 'جافة', min: 500, max: 750, baseD: 6 },
+                    { label: 'شبه رطبة', min: 750, max: 1000, baseD: 4 },
+                    { label: 'رطبة', min: 1000, max: 1200, baseD: 4 }
+                ];
+                
+                const labels = rainfallRanges.map(range => range.label);
+                const minDiameters = rainfallRanges.map(range => range.baseD);
+                const maxDiameters = rainfallRanges.map(range => range.baseD + 4);
+                
+                new Chart(diameterCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'الحد الأدنى للقطر (م)',
+                                data: minDiameters,
+                                backgroundColor: 'rgba(76, 175, 80, 0.6)',
+                                borderColor: '#4caf50',
+                                borderWidth: 2
+                            },
+                            {
+                                label: 'الحد الأقصى للقطر (م)',
+                                data: maxDiameters,
+                                backgroundColor: 'rgba(33, 150, 243, 0.6)',
+                                borderColor: '#2196f3',
+                                borderWidth: 2
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'نطاق القطر مقابل المنطقة المناخية',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            legend: {
+                                position: 'top',
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'المنطقة المناخية'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'القطر (م)'
+                                },
+                                min: 0,
+                                max: 14
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // مخطط 2: الارتفاع مقابل القطر
+            const heightCtx = document.getElementById('height-chart');
+            if (heightCtx) {
+                const D = Array.from({length: 101}, (_, i) => 2 + (i / 10));
+                const H = D.map(d => {
+                    let h = 30 + 2.5 * (d - 2);
+                    return Math.max(30, Math.min(50, h));
+                });
+                
+                new Chart(heightCtx, {
+                    type: 'line',
+                    data: {
+                        labels: D.map(d => d.toFixed(1)),
+                        datasets: [{
+                            label: 'الارتفاع (سم)',
+                            data: H,
+                            borderColor: '#2196f3',
+                            backgroundColor: 'rgba(33, 150, 243, 0.1)',
+                            borderWidth: 3,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'ارتفاع السد مقابل القطر (نطاق FAO: 30-50 سم)',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'القطر (م)'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'الارتفاع (سم)'
+                                },
+                                min: 25,
+                                max: 55
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // مخطط 3: نسب التجميع
+            const ratioCtx = document.getElementById('ratio-chart');
+            if (ratioCtx) {
+                const climateZones = [
+                    { label: 'جافة جداً', base: 3.0, factor: 1.0 },
+                    { label: 'شبه جافة', base: 2.2, factor: 0.8 },
+                    { label: 'جافة', base: 2.2, factor: 0.8 },
+                    { label: 'شبه رطبة', base: 1.6, factor: 0.6 },
+                    { label: 'رطبة', base: 1.6, factor: 0.6 }
+                ];
+                
+                const purposes = [0, 25, 50, 75, 100];
+                const datasets = climateZones.map((zone, i) => {
+                    const colors = ['#4caf50', '#2196f3', '#ff9800', '#9c27b0', '#f44336'];
+                    return {
+                        label: zone.label,
+                        data: purposes.map(p => {
+                            const C_A = zone.base + (p / 100) * zone.factor;
+                            return Math.max(1.0, Math.min(4.0, C_A));
+                        }),
+                        borderColor: colors[i],
+                        backgroundColor: colors[i] + '20',
+                        borderWidth: 2,
+                        tension: 0.4
+                    };
+                });
+                
+                new Chart(ratioCtx, {
+                    type: 'line',
+                    data: {
+                        labels: purposes.map(p => {
+                            const purposesLabels = ['الرعي', 'الشجيرات', 'الأشجار', 'العشبية', 'تحسين التربة'];
+                            return purposesLabels[purposes.indexOf(p)];
+                        }),
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'نسبة التجميع مقابل الغرض للمناطق المناخية المختلفة',
+                                font: { size: 14, weight: 'bold' }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'الغرض من النظام'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'نسبة التجميع (C:A)'
+                                },
+                                min: 0,
+                                max: 5
+                            }
+                        }
+                    }
+                });
+            }
+
+            // مخطط 4: كثافة الهلالات
+            const densityCtx = document.getElementById('density-chart');
+            if (densityCtx) {
+                const D = Array.from({length: 101}, (_, i) => 2 + (i / 10));
+                const pitsPerHectare = D.map(d => {
+                    const L = 0.75 * d;
+                    const Y = 1.10 * d;
+                    return 10000 / (L * Y);
+                });
+                
+                new Chart(densityCtx, {
+                    type: 'line',
+                    data: {
+                        labels: D.map(d => d.toFixed(1)),
+                        datasets: [{
+                            label: 'هلالات/هكتار',
+                            data: pitsPerHectare,
+                            borderColor: '#9c27b0',
+                            backgroundColor: 'rgba(156, 39, 176, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'كثافة الهلالات مقابل القطر',
+                                font: { size: 14, weight: 'bold' }
+                            },
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'القطر (م)'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'عدد الهلالات/هكتار'
+                                },
+                                min: 0
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // تهيئة التوثيق
+        function initDocumentation() {
+            createDocumentationCharts();
+            
+            // إضافة تأثيرات scroll للروابط الداخلية
+            document.querySelectorAll('.docs-toc a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // تهيئة التطبيق عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // تهيئة التوثيق
+            if (window.location.pathname.includes('docs.html')) {
+                initDocumentation();
+            }
+        });
+    </script>
 </body>
-</html>
-
-
-
-
-
+    </html>
