@@ -49,7 +49,7 @@
             <div class="calculator-header">
                 <h1 data-i18n="calculatorTitle">احسب ابتسامة أرضك</h1>
                 <p class="calculator-subtitle" data-i18n="calculatorSubtitle">آلة حاسبة لمعرفة حجم نظام هلال الحصاد المائي المناسب لأرضك</p>
-                <p class="calculator-description" data-i18n="calculatorDesc">أدخل بيانات أرضك للحصول على تصميم دقيق ومفصل لنظام حصاد مياه الأمطار</p>
+                <p class="calculator-description" data-i18n="calculatorDesc">استخدم السلايدرات أدناه لاختيار ظروف أرضك واحصل على تصميم دقيق ومفصل لنظام حصاد مياه الأمطار</p>
             </div>
 
             <div class="calculator-layout">
@@ -57,87 +57,62 @@
                 <div class="input-panel">
                     <form id="rainwater-calculator">
                         <div class="form-section">
-                            <h2 data-i18n="basicData">البيانات الأساسية</h2>
+                            <h2><i class="fas fa-cloud-rain"></i> المنطقة المناخية والأمطار</h2>
                             
-                            <div class="input-group">
-                                <label for="rainfall" data-i18n="rainfall">معدل هطول الأمطار السنوي *</label>
-                                <div class="input-with-unit">
-                                    <input type="number" id="rainfall" name="rainfall" min="50" max="1200" step="1" required>
-                                    <span class="unit">مم/سنة</span>
-                                </div>
-                                <small class="rainfall-hint">
-                                    <span data-i18n="rainfallHint">يجب أن يكون بين 50 و 1200 مم/سنة يمكنك الحساب من خلال</span>
-                                    <a href="https://sapling-teamngo.github.io/perjordan/" target="_blank">موقع حساب المعدل المطري</a>
-                                </small>
+                            <div class="slider-container">
+                                <label for="climate-zone">اختر المنطقة المناخية:</label>
+                                <input type="range" id="climate-zone" class="slider" min="0" max="100" value="25">
+                                <div class="slider-value" id="climate-value">شبه جافة (250-500 ملم)</div>
+                                <div class="rainfall-info" id="rainfall-info">معدل الأمطار السنوي: 250-500 ملم</div>
                             </div>
                             
-                            <div class="input-group">
-                                <label for="slope" data-i18n="slope">ميل الأرض *</label>
-                                <div class="input-with-unit">
-                                    <input type="number" id="slope" name="slope" min="0" max="25" step="0.1" required>
-                                    <span class="unit">%</span>
-                                </div>
-                                <small class="slope-hint">
-                                    <span data-i18n="slopeHint">يجب أن يكون بين 0 و 25% يمكنك ايضا حسابه من خلال</span>
-                                    <a href="https://sapling-teamngo.github.io/Slope/" target="_blank">موقع حساب الميل</a>
-                                </small>
-                            </div>
-                            
-                            <div class="input-group">
-                                <label for="crop" data-i18n="cropType">نوع المحصول (اختياري)</label>
-                                <select id="crop" name="crop">
-                                    <option value="">-- <span data-i18n="selectCrop">اختر نوع المحصول</span> --</option>
-                                    <option value="0.65" data-i18n="olive">الزيتون (Kc 0.65)</option>
-                                    <option value="0.75" data-i18n="pomegranate">الرمان (Kc 0.75)</option>
-                                    <option value="0.70" data-i18n="almond">اللوز (Kc 0.70)</option>
-                                    <option value="0.60" data-i18n="fig">التين (Kc 0.60)</option>
-                                    <option value="0.80" data-i18n="grape">العنب (Kc 0.80)</option>
-                                    <option value="0.55" data-i18n="atriplex">القطف (Kc 0.55)</option>
-                                    <option value="0.45" data-i18n="juniper">العرعر (Kc 0.45)</option>
-                                    <option value="0.40" data-i18n="thyme">الزعتر البري (Kc 0.40)</option>
-                                    <option value="0.50" data-i18n="sage">الميرمية (Kc 0.50)</option>
-                                    <option value="0.85" data-i18n="barley">الشعير (Kc 0.85)</option>
-                                    <option value="custom" data-i18n="custom">قيمة مخصصة</option>
-                                </select>
-                                <small>إذا لم تختر سيتم استخدام القيمة الافتراضية (1)</small>
-                            </div>
-                            
-                            <div class="input-group custom-kc" id="custom-kc-group" style="display: none;">
-                                <label for="custom-kc" data-i18n="customKc">قيمة Kc مخصصة</label>
-                                <input type="number" id="custom-kc" name="custom-kc" min="0.1" max="1.5" step="0.01" placeholder="0.5">
-                                <small data-i18n="customKcHint">معامل المحصول - اختياري (افتراضي 1 إذا لم تدخل قيمة)</small>
+                            <div class="option-buttons">
+                                <button type="button" class="option-btn" data-value="0">جافة جداً<br><small>&lt; 250 ملم</small></button>
+                                <button type="button" class="option-btn active" data-value="25">شبه جافة<br><small>250-500 ملم</small></button>
+                                <button type="button" class="option-btn" data-value="50">جافة<br><small>500-750 ملم</small></button>
+                                <button type="button" class="option-btn" data-value="75">شبه رطبة<br><small>750-1000 ملم</small></button>
+                                <button type="button" class="option-btn" data-value="100">رطبة<br><small>&gt; 1000 ملم</small></button>
                             </div>
                         </div>
                         
                         <div class="form-section">
-                            <h2 data-i18n="areaData">بيانات المساحة</h2>
+                            <h2><i class="fas fa-tree"></i> الغرض من النظام</h2>
                             
-                            <div class="input-group">
-                                <label for="area" data-i18n="landArea">مساحة الأرض *</label>
-                                <div class="input-with-unit">
-                                    <input type="number" id="area" name="area" min="0.1" step="0.1" value="1" required>
-                                    <select id="area-unit" name="area-unit">
-                                        <option value="hectare" data-i18n="hectare">هكتار</option>
-                                        <option value="acre" data-i18n="acre">فدان</option>
-                                        <option value="dunam" data-i18n="dunam">دونم</option>
-                                        <option value="square-meter" data-i18n="squareMeter">متر مربع</option>
-                                    </select>
-                                </div>
+                            <div class="slider-container">
+                                <label for="purpose">اختر الغرض من النظام:</label>
+                                <input type="range" id="purpose" class="slider" min="0" max="100" value="50">
+                                <div class="slider-value" id="purpose-value">أشجار</div>
                             </div>
                             
-                            <div class="input-group">
-                                <label for="soil-type" data-i18n="soilType">نوع التربة</label>
-                                <select id="soil-type" name="soil-type">
-                                    <option value="sandy" data-i18n="sandy">رملية</option>
-                                    <option value="loamy" data-i18n="loamy">طميية</option>
-                                    <option value="clay" selected data-i18n="clay">طينية</option>
-                                </select>
+                            <div class="option-buttons">
+                                <button type="button" class="option-btn" data-value="0">الرعي</button>
+                                <button type="button" class="option-btn" data-value="25">الشجيرات</button>
+                                <button type="button" class="option-btn active" data-value="50">الأشجار</button>
+                                <button type="button" class="option-btn" data-value="75">النباتات العشبية</button>
+                                <button type="button" class="option-btn" data-value="100">تحسين التربة</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h2><i class="fas fa-mountain"></i> ميل الأرض</h2>
+                            
+                            <div class="slider-container">
+                                <label for="slope">اختر ميل الأرض:</label>
+                                <input type="range" id="slope" class="slider" min="0" max="15" value="5">
+                                <div class="slider-value" id="slope-value">5%</div>
+                            </div>
+                            
+                            <div class="option-buttons">
+                                <button type="button" class="option-btn" data-value="0">0% (مسطحة)</button>
+                                <button type="button" class="option-btn active" data-value="5">5%</button>
+                                <button type="button" class="option-btn" data-value="10">10%</button>
+                                <button type="button" class="option-btn" data-value="15">15%</button>
                             </div>
                         </div>
                         
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-primary" data-i18n="calculateDesign">احسب التصميم</button>
-                            <button type="reset" class="btn btn-secondary" data-i18n="reset">إعادة تعيين</button>
+                            <button type="submit" class="btn btn-primary">احسب التصميم</button>
+                            <button type="reset" class="btn btn-secondary">إعادة تعيين</button>
                         </div>
                     </form>
                 </div>
@@ -308,19 +283,22 @@
                                 <div class="explanation-item">
                                     <h4 data-i18n="sourcesTitle">المصادر العلمية</h4>
                                     <div class="sources-list">
+                                        <a href="https://www.greener.land/eyebrow-terraces-2/" target="_blank" class="source-link">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            Greener Land - Eyebrow Terraces (المصدر الرئيسي)
+                                        </a>
                                         <a href="https://www.fao.org/4/u3160e/u3160e00.htm" target="_blank" class="source-link">
                                             <i class="fas fa-external-link-alt"></i>
-                                           FAO Water Harvesting Manual
+                                            FAO Water Harvesting Manual
                                         </a>
-                                           <a href="https://qcat.wocat.net/en/wocat/technologies/view/technologies_6652/" target="_blank" class="source-link">
+                                        <a href="https://qcat.wocat.net/en/wocat/technologies/view/technologies_6652/" target="_blank" class="source-link">
                                             <i class="fas fa-external-link-alt"></i>
-                                          The Half-Moon Technique [Benin]-WOCAT
+                                            The Half-Moon Technique [Benin]-WOCAT
                                         </a>
                                         <a href="https://www.unescwa.org/sites/default/files/pubs/pdf/micro-catchment-rainwater-harvesting-training-manual-arabic_0.pdf" target="_blank" class="source-link">
                                             <i class="fas fa-external-link-alt"></i>
                                             Rainwater harvesting in small catchments - ESCWA
                                         </a>
-
                                     </div>
                                 </div>
                             </div>
@@ -331,47 +309,6 @@
                             <h3><i class="fas fa-chart-bar"></i> <span data-i18n="visualResults">النتائج المرئية</span></h3>
                             <div class="chart-container">
                                 <canvas id="design-chart"></canvas>
-                            </div>
-                        </div>
-
-                        <!-- الرسم التوضيحي -->
-                        <div class="illustration-section">
-                            <h3><i class="fas fa-drafting-compass"></i> <span data-i18n="designIllustration">الرسم التوضيحي للتصميم</span></h3>
-                            <div class="illustration-container">
-                                <div class="half-moon-illustration">
-                                    <div class="terrain-line"></div>
-                                    <div class="half-moon-shape"></div>
-                                    <div class="dimension-lines">
-                                        <div class="dimension diameter-dim">
-                                            <span class="dim-label" id="illustration-diameter">D</span>
-                                        </div>
-                                        <div class="dimension height-dim">
-                                            <span class="dim-label" id="illustration-height">H</span>
-                                        </div>
-                                        <div class="dimension spacing-dim">
-                                            <span class="dim-label" id="illustration-spacing">L</span>
-                                        </div>
-                                    </div>
-                                    <div class="cultivation-area"></div>
-                                    <div class="catchment-area"></div>
-                                    <!-- إضافة هلالات إضافية للتوضيح -->
-                                    <div class="adjacent-bund"></div>
-                                    <div class="adjacent-bund second"></div>
-                                </div>
-                                <div class="illustration-legend">
-                                    <div class="legend-item">
-                                        <div class="legend-color cult-color"></div>
-                                        <span data-i18n="cultivationArea">منطقة الزراعة</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-color catch-color"></div>
-                                        <span data-i18n="catchmentArea">منطقة التجميع</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <div class="legend-color spacing-color"></div>
-                                        <span>منطقة التباعد</span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -393,11 +330,11 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 <span data-i18n="siteTitle">احسب ابتسامة أرضك</span>. <span data-i18n="designedBy">صمم من قبل <a href="https://www.linkedin.com/in/omaryaseen" target="_blank">عمر ياسين</a></span></p>
+                <p>&copy; 2025 <span data-i18n="siteTitle">احسب ابتسامة أرضك</span>. <span data-i18n="designedBy">صمم من قبل عمر ياسين</span></p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
