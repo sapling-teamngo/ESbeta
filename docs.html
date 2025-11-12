@@ -58,8 +58,8 @@
                     <ul>
                         <li><a href="#introduction" data-i18n="introduction">المقدمة</a></li>
                         <li><a href="#equations" data-i18n="equations">المعادلات الأساسية</a></li>
-                        <li><a href="#climate-zones" data-i18n="climateZones">المناطق المناخية</a></li>
-                        <li><a href="#purpose-types" data-i18n="purposeTypes">أنواع الأغراض</a></li>
+                        <li><a href="#climate-zones">المناطق المناخية</a></li>
+                        <li><a href="#purpose-types">أنواع الأغراض</a></li>
                         <li><a href="#charts" data-i18n="designCharts">الرسوم البيانية</a></li>
                         <li><a href="#validation" data-i18n="validationData">بيانات التحقق</a></li>
                         <li><a href="#sources" data-i18n="sources">المصادر</a></li>
@@ -194,48 +194,50 @@
                             <h3>تصنيف المناطق المناخية بناءً على معدل الأمطار</h3>
                             <p>تم تقسيم المناطق المناخية إلى 5 مستويات بناءً على معدل هطول الأمطار السنوي:</p>
                             
-                            <table class="validation-table">
-                                <thead>
-                                    <tr>
-                                        <th>المستوى</th>
-                                        <th>المنطقة المناخية</th>
-                                        <th>معدل الأمطار (مم/سنة)</th>
-                                        <th>خصائص التصميم</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><span class="climate-zone zone-arid">جافة جداً</span></td>
-                                        <td>&lt; 250</td>
-                                        <td>أقطار كبيرة (8-12م)، نسب تجميع عالية (3.0-4.0)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><span class="climate-zone zone-semi-arid">شبه جافة</span></td>
-                                        <td>250-500</td>
-                                        <td>أقطار متوسطة (6-10م)، نسب تجميع متوسطة (2.2-3.0)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td><span class="climate-zone zone-semi-arid">جافة</span></td>
-                                        <td>500-750</td>
-                                        <td>أقطار متوسطة (6-10م)، نسب تجميع متوسطة (2.2-3.0)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td><span class="climate-zone zone-humid">شبه رطبة</span></td>
-                                        <td>750-1000</td>
-                                        <td>أقطار صغيرة (4-8م)، نسب تجميع منخفضة (1.6-2.2)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td><span class="climate-zone zone-humid">رطبة</span></td>
-                                        <td>&gt; 1000</td>
-                                        <td>أقطار صغيرة (4-8م)، نسب تجميع منخفضة (1.6-2.2)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-container">
+                                <table class="validation-table">
+                                    <thead>
+                                        <tr>
+                                            <th>المستوى</th>
+                                            <th>المنطقة المناخية</th>
+                                            <th>معدل الأمطار (مم/سنة)</th>
+                                            <th>خصائص التصميم</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><span class="climate-zone zone-arid">جافة جداً</span></td>
+                                            <td>&lt; 250</td>
+                                            <td>أقطار كبيرة (8-12م)، نسب تجميع عالية (3.0-4.0)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><span class="climate-zone zone-semi-arid">شبه جافة</span></td>
+                                            <td>250-500</td>
+                                            <td>أقطار متوسطة (6-10م)، نسب تجميع متوسطة (2.2-3.0)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td><span class="climate-zone zone-semi-arid">جافة</span></td>
+                                            <td>500-750</td>
+                                            <td>أقطار متوسطة (6-10م)، نسب تجميع متوسطة (2.2-3.0)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td><span class="climate-zone zone-humid">شبه رطبة</span></td>
+                                            <td>750-1000</td>
+                                            <td>أقطار صغيرة (4-8م)، نسب تجميع منخفضة (1.6-2.2)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td><span class="climate-zone zone-humid">رطبة</span></td>
+                                            <td>&gt; 1000</td>
+                                            <td>أقطار صغيرة (4-8م)، نسب تجميع منخفضة (1.6-2.2)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             
                             <div class="equation-source">المصدر: Greener Land - Eyebrow Terraces & FAO Climate Classification</div>
                         </div>
@@ -248,48 +250,50 @@
                             <h3>تصنيف الأغراض وتأثيرها على التصميم</h3>
                             <p>تم تقسيم الأغراض إلى 5 أنواع بناءً على الاستخدام والاحتياجات المائية:</p>
                             
-                            <table class="validation-table">
-                                <thead>
-                                    <tr>
-                                        <th>النوع</th>
-                                        <th>الغرض</th>
-                                        <th>تأثير على القطر</th>
-                                        <th>الخصائص</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>الرعي</td>
-                                        <td>+1 متر</td>
-                                        <td>أحواض أكبر وأكثر تباعداً، مناسبة للمراعي والعلف</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>الشجيرات</td>
-                                        <td>لا يوجد تأثير</td>
-                                        <td>أحواض متوسطة الحجم، مناسبة للشجيرات متوسطة الحجم</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>الأشجار</td>
-                                        <td>لا يوجد تأثير</td>
-                                        <td>أحواض متوسطة الحجم، مناسبة للأشجار المثمرة والحرجية</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>النباتات العشبية</td>
-                                        <td>لا يوجد تأثير</td>
-                                        <td>أحواض متوسطة الحجم، مناسبة للنباتات العشبية والمحاصيل الحقلية</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>تحسين التربة</td>
-                                        <td>-1 متر</td>
-                                        <td>أحواض أصغر وأكثر كثافة، مناسبة لتحسين خصوبة التربة</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-container">
+                                <table class="validation-table">
+                                    <thead>
+                                        <tr>
+                                            <th>النوع</th>
+                                            <th>الغرض</th>
+                                            <th>تأثير على القطر</th>
+                                            <th>الخصائص</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>الرعي</td>
+                                            <td>+1 متر</td>
+                                            <td>أحواض أكبر وأكثر تباعداً، مناسبة للمراعي والعلف</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>الشجيرات</td>
+                                            <td>لا يوجد تأثير</td>
+                                            <td>أحواض متوسطة الحجم، مناسبة للشجيرات متوسطة الحجم</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>الأشجار</td>
+                                            <td>لا يوجد تأثير</td>
+                                            <td>أحواض متوسطة الحجم، مناسبة للأشجار المثمرة والحرجية</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>النباتات العشبية</td>
+                                            <td>لا يوجد تأثير</td>
+                                            <td>أحواض متوسطة الحجم، مناسبة للنباتات العشبية والمحاصيل الحقلية</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>تحسين التربة</td>
+                                            <td>-1 متر</td>
+                                            <td>أحواض أصغر وأكثر كثافة، مناسبة لتحسين خصوبة التربة</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                             
                             <div class="equation-source">المصدر: Greener Land - Eyebrow Terraces Application Guidelines</div>
                         </div>
@@ -347,68 +351,70 @@
                     <section id="validation" class="docs-section">
                         <h2 data-i18n="validationData">بيانات التحقق من الصحة</h2>
                         
-                        <table class="validation-table">
-                            <thead>
-                                <tr>
-                                    <th>المنطقة المناخية</th>
-                                    <th>معدل الأمطار (مم)</th>
-                                    <th>الغرض</th>
-                                    <th>القطر المحسوب (م)</th>
-                                    <th>القطر الميداني (م)</th>
-                                    <th>الفرق</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="climate-zone zone-arid">جافة جداً</span></td>
-                                    <td>200</td>
-                                    <td>الرعي</td>
-                                    <td>9.00</td>
-                                    <td>8.5 - 9.5</td>
-                                    <td>±3%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="climate-zone zone-arid">جافة جداً</span></td>
-                                    <td>200</td>
-                                    <td>تحسين التربة</td>
-                                    <td>7.00</td>
-                                    <td>6.8 - 7.2</td>
-                                    <td>±2%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="climate-zone zone-semi-arid">شبه جافة</span></td>
-                                    <td>400</td>
-                                    <td>الأشجار</td>
-                                    <td>6.00</td>
-                                    <td>5.8 - 6.2</td>
-                                    <td>±2%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="climate-zone zone-semi-arid">جافة</span></td>
-                                    <td>600</td>
-                                    <td>الشجيرات</td>
-                                    <td>6.00</td>
-                                    <td>5.9 - 6.1</td>
-                                    <td>±1%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="climate-zone zone-humid">شبه رطبة</span></td>
-                                    <td>800</td>
-                                    <td>النباتات العشبية</td>
-                                    <td>4.00</td>
-                                    <td>3.9 - 4.1</td>
-                                    <td>±2%</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="climate-zone zone-humid">رطبة</span></td>
-                                    <td>1200</td>
-                                    <td>تحسين التربة</td>
-                                    <td>3.00</td>
-                                    <td>2.9 - 3.1</td>
-                                    <td>±2%</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-container">
+                            <table class="validation-table">
+                                <thead>
+                                    <tr>
+                                        <th>المنطقة المناخية</th>
+                                        <th>معدل الأمطار (مم)</th>
+                                        <th>الغرض</th>
+                                        <th>القطر المحسوب (م)</th>
+                                        <th>القطر الميداني (م)</th>
+                                        <th>الفرق</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="climate-zone zone-arid">جافة جداً</span></td>
+                                        <td>200</td>
+                                        <td>الرعي</td>
+                                        <td>9.00</td>
+                                        <td>8.5 - 9.5</td>
+                                        <td>±3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="climate-zone zone-arid">جافة جداً</span></td>
+                                        <td>200</td>
+                                        <td>تحسين التربة</td>
+                                        <td>7.00</td>
+                                        <td>6.8 - 7.2</td>
+                                        <td>±2%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="climate-zone zone-semi-arid">شبه جافة</span></td>
+                                        <td>400</td>
+                                        <td>الأشجار</td>
+                                        <td>6.00</td>
+                                        <td>5.8 - 6.2</td>
+                                        <td>±2%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="climate-zone zone-semi-arid">جافة</span></td>
+                                        <td>600</td>
+                                        <td>الشجيرات</td>
+                                        <td>6.00</td>
+                                        <td>5.9 - 6.1</td>
+                                        <td>±1%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="climate-zone zone-humid">شبه رطبة</span></td>
+                                        <td>800</td>
+                                        <td>النباتات العشبية</td>
+                                        <td>4.00</td>
+                                        <td>3.9 - 4.1</td>
+                                        <td>±2%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="climate-zone zone-humid">رطبة</span></td>
+                                        <td>1200</td>
+                                        <td>تحسين التربة</td>
+                                        <td>3.00</td>
+                                        <td>2.9 - 3.1</td>
+                                        <td>±2%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         
                         <div class="equation-block">
                             <h3>دقة النموذج</h3>
@@ -479,72 +485,74 @@
 
                     <section id="variables" class="docs-section">
                         <h2 data-i18n="variables">تعريفات المتغيرات</h2>
-                        <table class="validation-table">
-                            <thead>
-                                <tr>
-                                    <th>الرمز</th>
-                                    <th>الوحدة</th>
-                                    <th>المعنى</th>
-                                    <th>النطاق</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>D</td>
-                                    <td>م</td>
-                                    <td>قطر الهلال (الحافة الداخلية)</td>
-                                    <td>2 - 12</td>
-                                </tr>
-                                <tr>
-                                    <td>H</td>
-                                    <td>سم</td>
-                                    <td>ارتفاع السد (عمودي من الأرض الأصلية)</td>
-                                    <td>30 - 50</td>
-                                </tr>
-                                <tr>
-                                    <td>L</td>
-                                    <td>م</td>
-                                    <td>المسافة بين الصفوف (من مركز إلى مركز باتجاه الانحدار)</td>
-                                    <td>1.5 - 9</td>
-                                </tr>
-                                <tr>
-                                    <td>Y</td>
-                                    <td>م</td>
-                                    <td>المسافة بين الحفر في الصف الواحد (من مركز إلى مركز على طول الخط الكنتوري)</td>
-                                    <td>2.2 - 13.2</td>
-                                </tr>
-                                <tr>
-                                    <td>C:A</td>
-                                    <td>—</td>
-                                    <td>نسبة منطقة التجميع إلى منطقة الزراعة</td>
-                                    <td>1.0 - 4.0</td>
-                                </tr>
-                                <tr>
-                                    <td>A_cult</td>
-                                    <td>م²</td>
-                                    <td>مساحة مخطط حفرة واحدة (نصف دائرة)</td>
-                                    <td>1.57 - 113.1</td>
-                                </tr>
-                                <tr>
-                                    <td>A_catch</td>
-                                    <td>م²</td>
-                                    <td>مساحة مخطط منطقة التجميع المساهمة</td>
-                                    <td>1.57 - 452.4</td>
-                                </tr>
-                                <tr>
-                                    <td>N_total</td>
-                                    <td>—</td>
-                                    <td>عدد الحفر في الهكتار</td>
-                                    <td>50 - 2000</td>
-                                </tr>
-                                <tr>
-                                    <td>S</td>
-                                    <td>%</td>
-                                    <td>ميل الأرض (الارتفاع / المسافة × 100)</td>
-                                    <td>0 - 15</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-container">
+                            <table class="validation-table">
+                                <thead>
+                                    <tr>
+                                        <th>الرمز</th>
+                                        <th>الوحدة</th>
+                                        <th>المعنى</th>
+                                        <th>النطاق</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>D</td>
+                                        <td>م</td>
+                                        <td>قطر الهلال (الحافة الداخلية)</td>
+                                        <td>2 - 12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>H</td>
+                                        <td>سم</td>
+                                        <td>ارتفاع السد (عمودي من الأرض الأصلية)</td>
+                                        <td>30 - 50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>L</td>
+                                        <td>م</td>
+                                        <td>المسافة بين الصفوف (من مركز إلى مركز باتجاه الانحدار)</td>
+                                        <td>1.5 - 9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Y</td>
+                                        <td>م</td>
+                                        <td>المسافة بين الحفر في الصف الواحد (من مركز إلى مركز على طول الخط الكنتوري)</td>
+                                        <td>2.2 - 13.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C:A</td>
+                                        <td>—</td>
+                                        <td>نسبة منطقة التجميع إلى منطقة الزراعة</td>
+                                        <td>1.0 - 4.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A_cult</td>
+                                        <td>م²</td>
+                                        <td>مساحة مخطط حفرة واحدة (نصف دائرة)</td>
+                                        <td>1.57 - 113.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A_catch</td>
+                                        <td>م²</td>
+                                        <td>مساحة مخطط منطقة التجميع المساهمة</td>
+                                        <td>1.57 - 452.4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>N_total</td>
+                                        <td>—</td>
+                                        <td>عدد الحفر في الهكتار</td>
+                                        <td>50 - 2000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>S</td>
+                                        <td>%</td>
+                                        <td>ميل الأرض (الارتفاع / المسافة × 100)</td>
+                                        <td>0 - 15</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     <section id="methodology" class="docs-section">
@@ -661,6 +669,26 @@
                         <span data-i18n="siteTitle">احسب ابتسامة أرضك</span>
                     </div>
                     <p class="footer-description" data-i18n="footerDesc">نظام متكامل لتصميم أنظمة حصاد مياه الأمطار</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 data-i18n="links">روابط سريعة</h4>
+                        <ul>
+                            <li><a href="index.html" data-i18n="home">الرئيسية</a></li>
+                            <li><a href="calculator.html" data-i18n="calculator">الآلة الحاسبة</a></li>
+                            <li><a href="docs.html" data-i18n="documentation">التوثيق</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 data-i18n="resources">مصادر</h4>
+                        <ul>
+                            <li><a href="#" data-i18n="faq">الأسئلة الشائعة</a></li>
+                            <li><a href="#" data-i18n="tutorials">الدروس التعليمية</a></li>
+                            <li><a href="#" data-i18n="research">الأبحاث</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
