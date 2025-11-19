@@ -477,11 +477,11 @@ function initSliders() {
     
     function updatePurposeValue(value) {
         const purposes = [
-            { value: 0, label: 'الرعي' },
-            { value: 25, label: 'الشجيرات' },
+            { value: 0, label: 'تحسين التربة' },
+            { value: 25, label: 'النباتات العشبية' },
             { value: 50, label: 'الأشجار' },
-            { value: 75, label: 'النباتات العشبية' },
-            { value: 100, label: 'تحسين التربة' }
+            { value: 75, label: 'الشجيرات' },
+            { value: 100, label: 'الرعي' }
         ];
         
         const closest = purposes.reduce((prev, curr) => {
@@ -562,10 +562,10 @@ function calculateRainwaterHarvesting(climateValue, purposeValue, slopeValue, ar
     }
     
     // تعديل القطر بناءً على الغرض
-    if (purpose <= 25) { // الرعي - أحجام أكبر
-        D += 1;
-    } else if (purpose >= 75) { // تحسين التربة - أحجام أصغر
+    if (purpose <= 25) { // تحسين التربة - أحجام أصغر
         D -= 1;
+    } else if (purpose >= 75) { // الرعي - أحجام أكبر
+        D += 1;
     }
     
     // ضمان الحدود (2-12 متر) حسب المصدر
